@@ -18,3 +18,14 @@ const createGrid = (num) => {
 }
 
 createGrid(16);
+
+document.addEventListener('DOMContentLoaded', () => {
+  const boxes = document.querySelectorAll(".box");
+
+  boxes.forEach(box => {
+    box.addEventListener('mouseover', () => {
+      box.style.backgroundColor = 'black'; 
+    });
+  });
+})
+
