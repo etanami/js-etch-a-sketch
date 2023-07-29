@@ -1,7 +1,7 @@
 
 const gridContainer = document.querySelector("#grid-container");
-const squaresBtn = document.querySelector(".squares");
 const resetBtn = document.querySelector(".reset");
+const clearBtn = document.querySelector(".clear");
 
 const createSquareDiv = () => {
   const newDiv = document.createElement("div");
@@ -36,6 +36,8 @@ gridContainer.addEventListener('mouseover', (e) => {
   }
 });
 
+
+// reset button to create new  user custom sketch pad
 resetBtn.addEventListener("click", e => {
   e.preventDefault();
   const squares = parseInt(prompt("How many squares per side would you like?"));
@@ -46,7 +48,17 @@ resetBtn.addEventListener("click", e => {
   } else {
     alert("Enter value betweeen 1 and 100");
   }
-})
+});
+
+const clearGrid = () => {
+  const boxes = document.querySelectorAll('.box');
+  boxes.forEach(box => {
+    box.style.backgroundColor = 'white';
+  });
+}
+
+// clear button to wipe of the sketch pad
+clearBtn.addEventListener("click", clearGrid);
 
 const changeGridSize = (num) => {
   createGrid(num);
